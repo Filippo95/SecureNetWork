@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+<script  type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<script>
+
+$(document).ready(function(){
+    $('#Table').DataTable();
+});
+</script>
+<h1>Standard Comunications</h1>
+
+<table id="Table" class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Data</th>
+      <th>Source</th>
+      <th>Destination</th>
+      <th>Protocol</th>
+      <th>Host</th>
+      <th ></th>
+        <th ></th>
+          <th ></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @standard_comunications.each do |standard_comunication| %>
+      <tr>
+        <td><%= standard_comunication.date %></td>
+        <td><%=truncate(standard_comunication.data, length: 17)  %></td>
+        <td><%= standard_comunication.source %></td>
+        <td><%= standard_comunication.destination %></td>
+        <td><%= standard_comunication.protocol %></td>
+        <td><%= standard_comunication.host %></td>
+        <td><%= link_to 'Show', standard_comunication %></td>
+        <td><%= link_to 'Edit', edit_standard_comunication_path(standard_comunication) %></td>
+        <td><%= link_to 'Destroy', standard_comunication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Standard Comunication', new_standard_comunication_path %>

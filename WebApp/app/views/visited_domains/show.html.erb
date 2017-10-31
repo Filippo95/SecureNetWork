@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @visited_domain.host %>
+</p>
+
+<p>
+  <strong>Times:</strong>
+  <%= @visited_domain.times %>
+</p>
+
+<%= link_to 'Edit', edit_visited_domain_path(@visited_domain) %> |
+<%= link_to 'Back', visited_domains_path %>

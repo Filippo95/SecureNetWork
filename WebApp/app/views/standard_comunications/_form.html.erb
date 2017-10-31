@@ -1,0 +1,47 @@
+<%= form_with(model: standard_comunication, local: true) do |form| %>
+  <% if standard_comunication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(standard_comunication.errors.count, "error") %> prohibited this standard_comunication from being saved:</h2>
+
+      <ul>
+      <% standard_comunication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date, id: :standard_comunication_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.text_area :data, id: :standard_comunication_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source %>
+    <%= form.text_area :source, id: :standard_comunication_source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination %>
+    <%= form.text_area :destination, id: :standard_comunication_destination %>
+  </div>
+
+  <div class="field">
+    <%= form.label :protocol %>
+    <%= form.text_area :protocol, id: :standard_comunication_protocol %>
+  </div>
+
+  <div class="field">
+    <%= form.label :host %>
+    <%= form.text_area :host, id: :standard_comunication_host %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class VisitedDomain < ApplicationRecord
+end

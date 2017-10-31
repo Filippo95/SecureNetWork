@@ -1,0 +1,27 @@
+<%= form_with(model: visited_domain, local: true) do |form| %>
+  <% if visited_domain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(visited_domain.errors.count, "error") %> prohibited this visited_domain from being saved:</h2>
+
+      <ul>
+      <% visited_domain.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :host %>
+    <%= form.text_area :host, id: :visited_domain_host %>
+  </div>
+
+  <div class="field">
+    <%= form.label :times %>
+    <%= form.text_field :times, id: :visited_domain_times %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

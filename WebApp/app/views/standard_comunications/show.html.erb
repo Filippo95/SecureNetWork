@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @standard_comunication.date %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @standard_comunication.data %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @standard_comunication.source %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @standard_comunication.destination %>
+</p>
+
+<p>
+  <strong>Protocol:</strong>
+  <%= @standard_comunication.protocol %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @standard_comunication.host %>
+</p>
+
+<%= link_to 'Edit', edit_standard_comunication_path(@standard_comunication) %> |
+<%= link_to 'Back', standard_comunications_path %>

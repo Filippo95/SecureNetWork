@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<script  type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<script>
+setTimeout(function(){
+   window.location.reload(1);
+}, 30000);
+$(document).ready(function(){
+    $('#Table').DataTable();
+});
+</script>
+<h1>Visited Domains</h1>
+
+<table id="Table" class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Host</th>
+      <th>Times</th>
+      <th ></th><th ></th><th ></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visited_domains.each do |visited_domain| %>
+      <tr>
+        <td><%= visited_domain.host %></td>
+        <td><%= visited_domain.times %></td>
+        <td><%= link_to 'Show', visited_domain %></td>
+        <td><%= link_to 'Edit', edit_visited_domain_path(visited_domain) %></td>
+        <td><%= link_to 'Destroy', visited_domain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Visited Domain', new_visited_domain_path %>
